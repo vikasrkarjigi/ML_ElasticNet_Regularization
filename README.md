@@ -1,6 +1,12 @@
 # ElasticNet Regularization for Housing Price Prediction
 This project explores the application of ElasticNet regularization for predicting  housing prices using the **Ames Housing** dataset. The notebook demonstrates preprocessing, custom model implementation, and performance evaluation using different regression techniques, with a focus on how ElasticNet combines Lasso(L1) and Ridge(L2) regularization for better predictive performance.
 
+## Team Members
+1. Ayyappa Boovadira Kushalappa **(A20555146)**
+2. Binaal Bopanna Machanda Beliappa **(A20599896)**
+3. Vikas Ravikumar Karjigi **(A20581687)**
+4. Yashas Basavaraju **(A20586428)**
+
 ## Project Overview
 ### Dataset
 The **Ames Housing** dataset includes detailed information on house features and sale prices. This dataset is a more advanced dataset.
@@ -53,33 +59,24 @@ ElasticNet regularization is a powerful tool that helps deal with datasets where
   ElasticNet achieves a balance between L1 and L2 regularization by adding penalties for both types of cofficients, helping improve model performance and prevent overfitting.
 
 ### Questions Answered in this README.
-1. Why ElasticNet?
-  - Lasso(L1): It is good for feature selection by shrinking some coefficients to zero, but may perform poorly when there are highly correlated features.
-  - Ridge (L2): Effective at dealing with multicollinearity but does not perform feature selection.
-  - ElasticNet: Combines the benefits of both, providing robust regularization and feature selection.
 
-2. What is the function of the model you have created and in what situations should it be utilized?
-  - The model is designed to address situations with multicollinearity or overfitting, using linear regression with or without regularization. It can be employed when we need to manage model complexity and avoid excessive coefficients, particularly in datasets with many dimensions.
-  - ElasticNet is especially handy when you need to strike a balance between L1 (for selecting features) and L2 (for shrinkage) regularization.
+1. What does the model you have implemented do and when should it be used?
+   - The model implements ElasticNet Regularisation, which is alinear regression technique that combines L1(Lasso) and L2(Ridge) penalties to improve model accuracy and handle mutlicollinearity. It is ideal for cases where the dataset has many features and some may be correlated or irrelevant. ElasticNet is typically used when neither Lasso nor Ridge alone is sufficient to handle a dataset's complexity.
 
-3. What method did you use to evaluate if your model is functioning reasonably well?
-  - The Ames Housing dataset was utilized to test the models, and the R² score was utilized to assess the adequacy of the fit for both the training and test sets.
-  - Moreover, the grid search process for the ElasticNet model helped ensure the selection of the optimal hyperparameters for the dataset provided.
-
-4. Which parameters have you made available to users of your implementation to adjust and optimize performance?
-  - Alpha: Regulates the overall level of regularization.
-  - Balance between L1 (Lasso) and L2 (Ridge) penalties is controlled by the L1 Ratio for ElasticNet.
-
-5. Does your implementation struggle with certain inputs? If given additional time, would you be able to find solutions to these issues or are they essential to the model?
-  - The implementation might face difficulties with datasets that exhibit significant multicollinearity or complex missing data patterns.
-  - Although median imputation is used for handling missing values, employing more sophisticated imputation methods could enhance performance.
-  - Moreover, the code employs a set number of iterations for enhancing performance, but it may not always lead to convergence. Better results could be achieved with a more flexible stopping criterion.
+2. How did you test your model to determine if it is working reasonably correctly?
+   - Splitting the dataset into training and testing sets.
+   - Training the model on the training data.
+   - Evaluating performance using metrics like Mean Squared Error (MSE) or R-Squared on the test set.
+   - Compating the performance of ElasticNet with other models to ensure it strikes the right balance between overfitting and underfitting.
+     
+3. What parameters have you exposed to users of your implementation in order to tune performance?
+    - alpha : Controls the strength of the regularisation.
+    - l1_ratio : Determines the mix of L1 and L2 regularisation. A ratio of 0 corresponds to Ridge, 1 corresponds to Lasso, and values between 0 and 1 give a mix.
+      
+4. Are there specific inputs that your implementation has trouble with? Given more time, could you work around these or is it fundamental?
+    - Very small dataset: Regularisation may not provide benefits with limited data.
+    - Non-linear relationships unless combined with feature engineering.
+    Given more time, workarounds could include adding polynomial features or trying different algorithms beter suited for non-linear data. However, if the problem is inherently nonlinear, the model's limitations might be fundamental.
 
 ## Results
 The code in this notebook demonstrates how ElasticNet improves the model's performance by reducing overfitting and achieving a better trade-off between bias and variance. The performance is compared using the R score on both the training and testing datasets.
-
-## Team Members
-1. Ayyappa Boovadira Kushalappa **(A20555146)**
-2. Binaal Bopanna Machanda Beliappa **(A20599896)**
-3. Vikas Ravikumar Karjigi **(A20581687)**
-4. Yashas Basavaraju **(A20586428)**
