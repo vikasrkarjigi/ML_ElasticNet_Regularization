@@ -76,6 +76,7 @@ ElasticNet regularization is a powerful tool that helps deal with datasets where
 4. Are there specific inputs that your implementation has trouble with? Given more time, could you work around these or is it fundamental?
     - Very small dataset: Regularisation may not provide benefits with limited data.
     - Non-linear relationships unless combined with feature engineering.
+    
     Given more time, workarounds could include adding polynomial features or trying different algorithms beter suited for non-linear data. However, if the problem is inherently nonlinear, the model's limitations might be fundamental.
 
 ## Results
